@@ -1,0 +1,74 @@
+/* DESKTOP NAV */
+
+nav, .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+nav {
+  justify-content: space-around;
+  align-items: center;
+  height: 17vh;
+}
+
+
+a {
+  color: black;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+nav .Navigation {
+  display: flex;
+}
+
+nav .MobileNavigation {
+  display: none;
+}
+
+@media (max-width: 990px) {
+
+  nav .Navigation {
+    display: none;
+  }
+
+  nav .MobileNavigation {
+    display: flex;
+    align-items: center;
+    background-color: red;
+  }
+
+  nav .MobileNavigation .Hamburger {
+    position: absolute;
+    right: 5%;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+  }
+}
