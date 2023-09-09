@@ -1,13 +1,32 @@
 import React from 'react';
+import { Menu } from 'antd';
 
-function NavLinks() {
+const menuItems = [
+    { label: 'Home', key: 'profile' },
+    { label: 'About', key: 'about' },
+    { label: 'Experience', key: 'experience' },
+    { label: 'Projects', key: 'projects' },
+    { label: 'Contact', key: 'contact' },
+  ];
+
+interface NavLinksProps {
+    isInline?: boolean; // Add the isInline prop
+}
+
+const NavLinks: React.FC <NavLinksProps> = ({ isInline = false }) => {
     return (
-        <ul className='nav-links'>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div className='nav-links'>
+            
+                <Menu
+                mode= {isInline ? "inline" : "horizontal"}
+                >
+                {menuItems.map((menuItem) => (
+                    <Menu.Item key={menuItem.key} className="nav-link-item">
+                    <a href={`#${menuItem.key}`}>{menuItem.label}</a>
+                    </Menu.Item>
+                ))}
+                </Menu>
+        </div>
     );
 }
 

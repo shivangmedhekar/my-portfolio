@@ -1,23 +1,29 @@
 import React, { useState } from 'react';
 
-import Navigation from './Navigation';
-import MobileNavigation from './MobileNavigation';
+import { Row, Col } from 'antd'; 
+
+import Logo from './Logo';
+import MobileNav from './MobileNav';
+import DesktopNav from './DesktopNav';
+
 import './NavigationBar.css' // CSS File
+
 
 function NavigationBar() {
 
-    const [open, setOpen] = useState(false); // State managed in the Navigation component
-
-    const toggleMenu = () => {
-        setOpen(!open);
-    };
-
     return (
-        <nav id="desktop-nav">
-            <div className='logo'>Shivang Medhekar</div>
-            <Navigation />
-            <MobileNavigation open={open} toggleMenu={toggleMenu} />
-        </nav>
+        <div className='nav-bar'>
+            <Row>
+                <Col span={14}> 
+                    <Logo name='Shivang Medhekar' />
+                </Col>
+
+                <Col span={10}>
+                    <DesktopNav />
+                    <MobileNav />
+                </Col>
+            </Row>
+        </div>  
     );
 }
 
