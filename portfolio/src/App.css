@@ -1,4 +1,15 @@
 /* GENERAL */
+
+.ant-layout-header {
+  background-color: transparent; /* Change to your desired background color or 'transparent' to remove the bar */
+  padding: 0; /* Reset padding */
+  margin: 0; /* Reset margin */
+}
+
+.ant-layout-content {
+  background-color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,15 +34,10 @@
     transition: all 300ms ease;
   }
   
-  
-  
-  
-  
-  
   /* SECTIONS */
   
   section {
-    padding-top: 4vh;
+    padding-top: 17vh;
     height: 96vh;
     margin: 0 10rem;
     box-sizing: border-box;
@@ -41,7 +47,7 @@
   .section-container {
     display: flex;
   }
-  
+
   
   
   /* ICONS */
@@ -115,12 +121,7 @@
   }
   
   @media screen and (max-width: 1200px) {
-    #desktop-nav {
-      display: none;
-    }
-    #hamburger-nav {
-      display: flex;
-    }
+
     #experience,
     .experience-details-container {
       margin-top: 2rem;
