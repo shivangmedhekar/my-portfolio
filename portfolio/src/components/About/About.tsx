@@ -2,7 +2,7 @@ import React from 'react';
 
 import './About.css';
 
-import AboutPic from '../../assets/about-pic.png';
+import AboutPic from '../../assets/profile-pic-3.png';
 import ExperiencePNG from '../../assets/experience.png';
 import EducationPNG from '../../assets/education.png';
 import ArrowICON from '../../assets/arrow.png';
