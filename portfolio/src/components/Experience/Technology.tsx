@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Row, Col } from 'antd';
+
 import Skill from './Skill';
 
 interface TechnologysProps {
@@ -10,13 +12,18 @@ interface TechnologysProps {
 const Technology: React.FC<TechnologysProps> = ({ name, skillList }) => {
     return (
         <div className="details-container">
-            <h2 className="experience-sub-title">Frontend Development</h2>
+            <h2 className="experience-sub-title">{ name }</h2>
 
             <div className="article-container">
 
-                {skillList.map((skill) => (
-                    <Skill key={skill.name} name={skill.name} level={skill.level} />
-                ))}
+                <Row>
+                    {skillList.map((skill) => (
+                        <Col xs={12} sm={12} md={12} lg={8} xl={6}>
+                            <Skill key={skill.name} name={skill.name} level={skill.level} />
+                        </Col>
+                    ))}
+                </Row>
+                
 
             </div>
         </div>

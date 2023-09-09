@@ -1,11 +1,16 @@
 import React from 'react';
 
-import './About.css';
+import { Row, Col } from 'antd';
 
-import AboutPic from '../../assets/profile-pic-3.png';
+import AboutPicture from './SubComponents/AboutPicture';
+import AboutBlocks from './SubComponents/AboutBlocks';
+
 import ExperiencePNG from '../../assets/experience.png';
 import EducationPNG from '../../assets/education.png';
 import ArrowICON from '../../assets/arrow.png';
+
+
+import './About.css';
 
 const About: React.FC = () => {
     return (
@@ -14,47 +19,41 @@ const About: React.FC = () => {
             <h1 className="title">About Me</h1>
 
             <div className="section-container">
-                <div className="section__pic-container">
-                    <img
-                        src={AboutPic}
-                        alt="Profile picture"
-                        className="about-pic"
-                    />
-                </div>
 
-                <div className="about-details-container">
-                    <div className="about-containers">
-                        <div className="details-container">
-                            <img
-                                src={ExperiencePNG}
-                                alt="Experience icon"
-                                className="icon"
-                            />
-                            <h3>Experience</h3>
-                            <p>2+ years <br />Frontend Development</p>
+                <Row>
+                    <Col xs={24} sm={24} md={24} lg={24} xl={9}>
+                        <AboutPicture />
+                    </Col>
+
+                    <Col xs={0} sm={0} md={0} lg={0} xl={2}></Col>
+
+                    <Col xs={24} sm={24} md={24} lg={24} xl={13}>
+
+                        <div className="about-details-container">
+
+                            <AboutBlocks />
+    
+                            <div className="text-container">
+                                <p>
+                                    I am a Masters student in Computer Science at Stevens Institute of Technology, 
+                                    set to graduate in December 2023. I have a strong foundation in coding fundamentals and a 
+                                    track record of high-quality engineering. I have experience in web development and 
+                                    cloud computing. My technical skills include proficiency in Python, JavaScript, Java, 
+                                    and C++, as well as experience with web frameworks such as Node.js, Express.js, React, 
+                                    MongoDB, and AWS. I have also completed several academic projects that demonstrate my 
+                                    ability to work in a team and to translate real-world problems into elegant code solutions. 
+                                    These projects include building a music playback app, a movie booking app and an ecommerce 
+                                    web app. I also have experience in machine learning, computer vision and data analysis. 
+                                    I am actively seeking software development engineer roles and am excited to bring my 
+                                    skills and experience to a new team.
+                                </p>
+                            </div>
+
                         </div>
 
-                        <div className="details-container">
-                            <img
-                                src={EducationPNG}
-                                alt="Education icon"
-                                className="icon"
-                            />
-                            <h3>Education</h3>
-                            <p>B.Sc. Bachelors Degree<br />M.Sc. Masters Degree</p>
-                        </div>
-                    </div>
-                    <div className="text-container">
-                        <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis
-                        reprehenderit et laborum, rem, dolore eum quod voluptate
-                        exercitationem nobis, nihil esse debitis maxime facere minus sint
-                        delectus velit in eos quo officiis explicabo deleniti dignissimos.
-                        Eligendi illum libero dolorum cum laboriosam corrupti quidem,
-                        reiciendis ea magnam? Nulla, impedit fuga!
-                        </p>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
+
             </div>
             <img
                 src={ArrowICON}

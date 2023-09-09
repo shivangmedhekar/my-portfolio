@@ -12,6 +12,7 @@
   
   .about-details-container {
     justify-content: center;
+  
     flex-direction: column;
   }
   
@@ -19,9 +20,10 @@
   .about-details-container {
     display: flex;
   }
+
   
   .about-pic {
-    border-radius: 2rem;
+    border-radius: 4rem;
   }
   
   .arrow {
@@ -51,4 +53,24 @@
     margin: auto 0;
   }
 
-  
+  .flag {
+    height: 45px;
+  }
+
+  .uni-logo {
+    height: 120px;
+  }
+
+  .details-container-multi {
+    flex: 1;
+    background: white;
+    text-align: center;
+  }
+
+  .details-container.home {
+    margin-top: 20px;
+  }
+
+  .text-container p {
+    text-align: justify;
+  }
