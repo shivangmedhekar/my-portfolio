@@ -1,24 +1,40 @@
 import React from 'react';
 
+import { Typewriter } from 'react-simple-typewriter';
+
 import Socials from './Socials';
 
-import './Profile.css';
-import profilePic from '../../assets/profile-pic.png';
+
+import profilePic from '../../assets/IMG_8725-modified.png';
 import LinkedInLogo from '../../assets/linkedin.png';
 import GitHubLogo from '../../assets/github.png';
+
+import './Profile.css';
 
 const Profile: React.FC = () => {
     return (
         <section id="profile">
 
             <div className="section__pic-container">
-                <img src={profilePic} alt="John Doe profile picture" />
+                <img src={profilePic} alt="Shivang Medhekar Profile Picture" />
             </div>
 
             <div className="section__text">
                 <p className="section__text__p1">Hello, I'm</p>
-                <h1 className="title">John Doe</h1>
-                <p className="section__text__p2">Frontend Developer</p>
+                <h1 className="title">Shivang Medhekar</h1>
+                <p className="section__text__p2">
+                    <Typewriter 
+                        words={['CS Gradute Student','Software Engineer', 'Developer', 'Dev Ops']}
+                        loop={100}
+                        cursor
+                        cursorStyle='|'
+                        typeSpeed={70}
+                        deleteSpeed={50}
+                        delaySpeed={1000}
+                    />
+                    
+                    
+                </p>
 
                 <div className="btn-container">
                     <button
