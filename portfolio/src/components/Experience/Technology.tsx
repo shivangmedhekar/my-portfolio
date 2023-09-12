@@ -23,8 +23,7 @@ const Technology: React.FC<TechnologysProps> = ({ name, skillList }) => {
                         </Col>
                     ))}
                 </Row>
-                
-
+        
             </div>
         </div>
     );

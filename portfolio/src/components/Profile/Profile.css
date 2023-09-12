@@ -42,3 +42,13 @@
   margin-top: 1rem;
   gap: 1rem;
 }
+
+.profile-picture {
+  animation: animate 2s infinite ease alternate;
+}
+
+@keyframes animate {
+  100% {
+    transform: translateY(3  0px);
+  }
+}
