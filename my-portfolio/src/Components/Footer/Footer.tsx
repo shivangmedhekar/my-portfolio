@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="footer__container container grid">
           <div>
             <h1 className="footer__title">Shivang Medhekar</h1>
-            <span className="footer__subtitle"><Designations /></span>
+            <span className="footer__subtitle"><Designations class_name='footer__subtitle'/></span>
           </div>
 
           <ul className="footer__links">

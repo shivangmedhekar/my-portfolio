@@ -30,7 +30,7 @@ const Home = () => {
 
                 <div className="home__data">
                     <h1 className="home__title">Hi, I'm Shivang</h1>
-                    <Designations />
+                    <Designations class_name='home__subtitle'/>
                     {/* <h3 className="home__subtitle">CS Gradute Student</h3> */}
                     <p className="home__description">Aspiring Software Engineer with strong coding skills, web dev experience, and project success, seeking SDE roles</p>
 

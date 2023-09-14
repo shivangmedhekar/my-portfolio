@@ -2,12 +2,16 @@ import React from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import designationsData from '../../Data/designationsData.json';
 
-const Designations: React.FC = () => {
+interface DesignationsProps {
+    class_name: string;
+}
+
+const Designations: React.FC <DesignationsProps> = ( { class_name }) => {
 
     const designations: string[] = designationsData.designations;
 
     return(
-        <h3 className="home__subtitle">
+        <h3 className={class_name}>
             <Typewriter 
                 words={ designations }
                 loop={100}
