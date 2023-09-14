@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Swiper from 'swiper/bundle';
 
 import Project from './SubComponents/Project';
-import PorjectsData from './SubComponents/ProjectsData';
+import projectData from '../../Data/projectData.json';
 
 import 'swiper/swiper-bundle.css';
 
@@ -33,7 +33,7 @@ const Portfolio = () => {
       <div className="portfolio__container container swiper-container">
         <div className="swiper-wrapper">
           
-          {PorjectsData.map((project => (
+          {projectData.map((project => (
             <Project title={project.title} image={project.image} github={project.github} description={project.description}/>
           )))}
           
