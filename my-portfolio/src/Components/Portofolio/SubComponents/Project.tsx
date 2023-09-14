@@ -2,20 +2,22 @@ import React from 'react';
 
 interface ProjectProps {
     title: string;
+    image: string;
+    github: string;
     description: string;
 }
 
-const Project: React.FC <ProjectProps> = ( { title, description }) => {
+const Project: React.FC <ProjectProps> = ( { title, image, github, description }) => {
     return(
         <div className="portfolio__content grid swiper-slide">
-            <img src="assets/img/portfolio1.jpg" alt="" className="portfolio__img" />
+            <img src={`assets/img/${image}`} alt="" className="portfolio__img" />
 
             <div className="portfolio__data">
                 <h3 className="portfolio__title">{title}</h3>
                 <p className="portfolio__description">{description}</p>
-                <a href="#" className="button button--flex button--small portfolio__button">
-                    Demo
-                <i className="uil uil-arrow-right button__icon"></i>
+                <a href={github} className="button button--flex button--small portfolio__button" target='_blank'>
+                    GitHub
+                <i className="uil uil-github-alt button__icon"></i>
                 </a>
                 
             </div>

@@ -34,7 +34,7 @@ const Portfolio = () => {
         <div className="swiper-wrapper">
           
           {PorjectsData.map((project => (
-            <Project title={project.title} description={project.description}/>
+            <Project title={project.title} image={project.image} github={project.github} description={project.description}/>
           )))}
           
         </div>
