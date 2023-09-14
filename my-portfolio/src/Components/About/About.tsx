@@ -8,7 +8,7 @@ const DownloadCVButton = () => {
     return (
         <div className="about__buttons">
             {/* Change your CV */}
-            <a href="assets/pdf/Alexa-Cv.pdf" target="_blank" className="button button--flex">
+            <a href="assets/pdf/Shivang_Medhekar_Resume.pdf" target="_blank" className="button button--flex">
                 Download CV <i className="uil uil-download-alt button__icon"></i>
             </a>
         </div>
