@@ -1,26 +1,14 @@
 import React from 'react';
 
-const socialLinks = [
-    {
-        link: 'https://www.linkedin.com/',
-        classNames: ['uil', 'uil-linkedin-alt']
-    },
-    {
-        link: 'https://dribbble.com/',
-        classNames: ['uil', 'uil-dribbble']
-    },
-    {
-        link: 'https://github.com/',
-        classNames: ['uil', 'uil-github-alt']
-    }
-];
+import socialsData from '../../../Data/socialsData.json';
 
 interface SocialIconProps {
+    name: string;
     link: string;
     icon_classes: string[];
 }
 
-const SocialIcon: React.FC <SocialIconProps> = ({ link, icon_classes }) => {
+const SocialIcon: React.FC <SocialIconProps> = ({ name, link, icon_classes }) => {
     return(
         <a href={ link } target="_blank" className="home__social-icon">
             <i className={ icon_classes.join(' ') }></i>
@@ -31,11 +19,9 @@ const SocialIcon: React.FC <SocialIconProps> = ({ link, icon_classes }) => {
 const Socials: React.FC = () => {
     return(
         <div className="home__social">
-
-            {socialLinks.map((item) => (
-                <SocialIcon link={item.link} icon_classes={ item.classNames }/>
+            {socialsData.homeSocials.map((item) => (
+                <SocialIcon name={item.name} link={item.link} icon_classes={ item.classNames }/>
             ))}
-
         </div>
     );
 }

@@ -26,24 +26,25 @@ const About: React.FC = () => {
                 <img src="assets/img/about.jpg" alt="" className="about__img" />
 
                 <div className="about__data">
-                    <p className="about__description">Web developer, with extensive knowledge and years of 
-                        experience, working in web technologies and Ui / Ux design, delivering quality work.
+                    <p className="about__description">I'm a Computer Science Masters student with strong coding skills, 
+                    specializing in web development, cloud computing, and machine learning, 
+                    actively seeking software engineering roles.
                     </p>
 
                     <div className="about__info">
                         <div>
-                            <span className="about__info-title">08+</span>
-                            <span className="about__info-name">Years <br /> experience</span>
+                            <span className="about__info-title">2</span>
+                            <span className="about__info-name">Internships</span>
                         </div>
 
                         <div>
-                            <span className="about__info-title">20+</span>
+                            <span className="about__info-title">10+</span>
                             <span className="about__info-name">Completed <br /> projects</span>
                         </div>
 
                         <div>
-                            <span className="about__info-title">05+</span>
-                            <span className="about__info-name">Companies <br /> worked</span>
+                            <span className="about__info-title">20+</span>
+                            <span className="about__info-name">Tech <br /> Skills</span>
                         </div>
                     </div>
 

@@ -19,7 +19,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="contact__content">
             <label htmlFor="" className="contact__label">
-              Project
+              Subject
             </label>
             <input type="text" className="contact__input" />
           </div>

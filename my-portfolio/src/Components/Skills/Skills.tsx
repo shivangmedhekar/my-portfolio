@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 import Technology from './SubComponents/Technology';
+import skillsData from '../../Data/SkillsData.json';
 
 const Skills: React.FC = () => {
 
@@ -36,30 +37,20 @@ const Skills: React.FC = () => {
         });
         };
     }, []);
+    
+    const programmingLanguagesIcon = ["bx", "bx-code-alt", "skills__icon"];
+    const programmingLanguages = skillsData.programmingLanguages;
 
-    const frontEndIcon = ["uil", "uil-brackets-curly", "skills__icon"];
-    const frontEndSkills = [
-        { name: 'HTML', percentage: 90 },
-        { name: 'CSS', percentage: 80 },
-        { name: 'JavaScript', percentage: 60 },
-        { name: 'React', percentage: 85 }
-    ];
+
+    const frontEndIcon = ["uil", "uil-desktop", "skills__icon"];
+    const frontEndSkills = skillsData.frontEndSkills;
 
 
     const backEndIcon = ["uil", "uil-server-network", "skills__icon"];
-    const backEndSkills = [
-        { name: 'PHP', percentage: 80 },
-        { name: 'Node Js', percentage: 70 },
-        { name: 'Firebase', percentage: 90 },
-        { name: 'Python', percentage: 55 },
-    ];
+    const backEndSkills = skillsData.backEndSkills;
 
-    const designerIcon = ["uil", "uil-swatchbook", "skills__icon"]
-    const designerSkills = [
-        { name: 'Figma', percentage: 90 },
-        { name: 'Sketch', percentage: 85 },
-        { name: 'Photoshop', percentage: 85 },
-    ];
+    const devopsIcon = ["uil", "uil-cloud-database-tree", "skills__icon"]
+    const devopsSkills = skillsData.devopsSkills;
 
     return (
         <section className="skills section" id="skills">
@@ -67,10 +58,11 @@ const Skills: React.FC = () => {
             <span className="section__subtitle">My technical level</span>
 
             <div className="skills__container container grid">
-
-                <Technology title='Frontend Development' icons_classes={ frontEndIcon } subtitle='More than 4 years' skills={frontEndSkills}/>
-                <Technology title='Backend Development' icons_classes={ backEndIcon } subtitle='More than 2 years' skills={backEndSkills}/>
-                <Technology title='Designer' icons_classes={ designerIcon } subtitle='More than 5 years' skills={designerSkills}/>
+                
+                <Technology title='Programming Languages' icons_classes={ programmingLanguagesIcon } subtitle='More than 4 years' skills={ programmingLanguages }/>
+                <Technology title='Frontend Development' icons_classes={ frontEndIcon } subtitle='More than 4 years' skills={ frontEndSkills }/>
+                <Technology title='Backend Development' icons_classes={ backEndIcon } subtitle='More than 2 years' skills={ backEndSkills }/>
+                <Technology title='Devops' icons_classes={ devopsIcon } subtitle='More than 5 years' skills={ devopsSkills }/>
                 
             </div>
         </section>

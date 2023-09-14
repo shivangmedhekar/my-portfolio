@@ -1,4 +1,6 @@
 import React from 'react';
+import Designations from '../Designations/Designations';
+
 
 const Footer = () => {
   return (
@@ -6,14 +8,14 @@ const Footer = () => {
       <div className="footer__bg">
         <div className="footer__container container grid">
           <div>
-            <h1 className="footer__title">Shivang</h1>
-            <span className="footer__subtitle">Developer</span>
+            <h1 className="footer__title">Shivang Medhekar</h1>
+            <span className="footer__subtitle"><Designations /></span>
           </div>
 
           <ul className="footer__links">
             <li>
-              <a href="#services" className="footer__link">
-                Services
+              <a href="#skills" className="footer__link">
+                Skills
               </a>
             </li>
             <li>
@@ -29,13 +31,13 @@ const Footer = () => {
           </ul>
 
           <div className="footer__socials">
-            <a href="https://www.facebook.com/" target="_blank" className="footer__social">
+            <a href="https://www.facebook.com/smedhekar900/" target="_blank" className="footer__social">
               <i className="uil uil-facebook-f"></i>
             </a>
-            <a href="https://www.instagram.com/" target="_blank" className="footer__social">
+            <a href="https://www.instagram.com/shivang_medhekar/" target="_blank" className="footer__social">
               <i className="uil uil-instagram"></i>
             </a>
-            <a href="https://twitter.com/" target="_blank" className="footer__social">
+            <a href="https://twitter.com/ShivangMedhekar" target="_blank" className="footer__social">
               <i className="uil uil-twitter-alt"></i>
             </a>
           </div>

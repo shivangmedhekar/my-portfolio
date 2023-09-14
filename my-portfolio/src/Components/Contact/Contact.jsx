@@ -2,6 +2,7 @@ import React from 'react';
 
 import ContactInfo from './SubComponents/ContactInfo';
 import ContactForm from './SubComponents/ContactForm';
+import contactData from '../../Data/contactData.json';
 
 const Contact = () => {
   return (
@@ -12,10 +13,11 @@ const Contact = () => {
       <div className="contact__container container grid">
         
         <ContactInfo 
-            contact_no='551-689-1874'
-            email='smedheka@stevens.edu'
-            location='Jersey City, NJ, United States'
-            />
+            contact_no= {contactData.phone_no}
+            email= {contactData.email}
+            location= {<div dangerouslySetInnerHTML={{ __html: contactData.location }} />
+          }
+        />
         <ContactForm />
         
       </div>

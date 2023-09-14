@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 
 import QualificationItems from './SubComponments/QualificationItems';
-import Qualifications from './QualificationData';
-
+import qualificationData from '../../Data/qualificationData.json';
 
 
 const Qualification = () => {
@@ -13,10 +12,10 @@ const Qualification = () => {
         setActiveTab(tabId);
     }
 
-    const [educationQualifications, workQualifications] = Qualifications;
-      
+    const educationQualifications = qualificationData.educationQualifications;
+    const workQualifications = qualificationData.workQualifications;
     return (
-        <section className="qualification section">
+        <section className="qualification section" id='qualifications'>
         <h2 className="section__title">Qualification</h2>
         <span className="section__subtitle">My personal journey</span>
 

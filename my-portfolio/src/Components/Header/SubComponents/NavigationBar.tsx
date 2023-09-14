@@ -26,7 +26,7 @@ const NavigationBar: React.FC = () => {
         { section: 'Home', icon_classes: ['uil', 'uil-estate'] },
         { section: 'About', icon_classes: ['uil', 'uil-user'] },
         { section: 'Skills', icon_classes: ['uil', 'uil-file-alt'] },
-        { section: 'Services', icon_classes: ['uil', 'uil-briefcase-alt'] },
+        { section: 'Qualifications', icon_classes: ['uil', 'uil-briefcase-alt'] },
         { section: 'Portfolio', icon_classes: ['uil', 'uil-scenery'] },
         { section: 'Contact', icon_classes: ['uil', 'uil-message'] }
     ];
@@ -34,7 +34,7 @@ const NavigationBar: React.FC = () => {
     return(
         <nav className="nav container">
             
-            <Logo name='Shivang'/>
+            <Logo name='Shivang Medhekar'/>
 
             <div className={`nav__menu ${menu ? 'show-menu' : ''}`} id="nav-menu">
                 <ul className="nav__list grid">

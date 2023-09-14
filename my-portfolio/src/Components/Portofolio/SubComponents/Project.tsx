@@ -14,9 +14,10 @@ const Project: React.FC <ProjectProps> = ( { title, description }) => {
                 <h3 className="portfolio__title">{title}</h3>
                 <p className="portfolio__description">{description}</p>
                 <a href="#" className="button button--flex button--small portfolio__button">
-                Demo
+                    Demo
                 <i className="uil uil-arrow-right button__icon"></i>
                 </a>
+                
             </div>
         </div>
     );

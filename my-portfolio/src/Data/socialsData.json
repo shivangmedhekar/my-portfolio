@@ -1,0 +1,16 @@
+{
+    "homeSocials": [
+        {
+            "name": "LinkedIn",
+            "link": "https://www.linkedin.com/in/shivangmedhekar/",
+            "classNames": ["uil", "uil-linkedin"]
+        },
+        {
+            "name": "GitHub",
+            "link": "https://github.com/shivangmedhekar",
+            "classNames": ["uil", "uil-github"]
+        }
+    ],
+
+    "footerSocials": []
+}

@@ -1,6 +1,9 @@
 import React from 'react';
 
+import Designations from '../Designations/Designations';
+
 import Socials from './SubComponents/Socials';
+
 
 const Home = () => {
     return (
@@ -20,15 +23,16 @@ const Home = () => {
 
                         {/*====================Insert your image in the Img folder and Change your image | 
                         Center your image with X: horizontal, Y: vertical ====================*/}
-                        <image className="home__blob-img" x="12" y="18" href="assets/img/perfil.png" />
+                        <image className="home__blob-img" x="-175" y="-130" href="assets/img/shivang.jpg" />
                     </g>
                     </svg>
                 </div>
 
                 <div className="home__data">
                     <h1 className="home__title">Hi, I'm Shivang</h1>
-                    <h3 className="home__subtitle">CS Gradute Student</h3>
-                    <p className="home__description">High-level experience in web design and development knowledge, producing quality work.</p>
+                    <Designations />
+                    {/* <h3 className="home__subtitle">CS Gradute Student</h3> */}
+                    <p className="home__description">Aspiring Software Engineer with strong coding skills, web dev experience, and project success, seeking SDE roles</p>
 
                     <a href="#contact" className="button button--flex">Contact Me <i className="uil uil-message button__icon"></i></a>
                 </div>
@@ -43,8 +47,6 @@ const Home = () => {
                 </div>
             </div>
             </section>
-
-
     );
 }
 

@@ -6,7 +6,7 @@ interface TechnologyProps {
     title: string;
     icons_classes: string[] ;
     subtitle: string;
-    skills: {name: string, percentage: number}[]
+    skills: {name: string, icon_classes: string, percentage: number}[]
 }
 
 const Technology: React.FC <TechnologyProps> = ( { title, icons_classes, subtitle, skills } ) => {
@@ -26,7 +26,7 @@ const Technology: React.FC <TechnologyProps> = ( { title, icons_classes, subtitl
             <div className="skills__list grid">
 
                 {skills.map((item) => (
-                    <Skill name={item.name} percentage={item.percentage}/>
+                    <Skill name={item.name} icon_classes={item.icon_classes} percentage={item.percentage}/>
                 ))}
 
                 {/* Add other skill items here */}
