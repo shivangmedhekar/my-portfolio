@@ -60,9 +60,9 @@ const Skills: React.FC = () => {
             <div className="skills__container container grid">
                 
                 <Technology title='Programming Languages' icons_classes={ programmingLanguagesIcon } subtitle='More than 4 years' skills={ programmingLanguages }/>
-                <Technology title='Frontend Development' icons_classes={ frontEndIcon } subtitle='More than 4 years' skills={ frontEndSkills }/>
+                <Technology title='Frontend Development' icons_classes={ frontEndIcon } subtitle='More than 2 years' skills={ frontEndSkills }/>
                 <Technology title='Backend Development' icons_classes={ backEndIcon } subtitle='More than 2 years' skills={ backEndSkills }/>
-                <Technology title='Devops' icons_classes={ devopsIcon } subtitle='More than 5 years' skills={ devopsSkills }/>
+                <Technology title='Devops' icons_classes={ devopsIcon } subtitle='More than 1 years' skills={ devopsSkills }/>
                 
             </div>
         </section>

@@ -1,42 +1,41 @@
 {
     "programmingLanguages": [
-        { "name": "Python", "icon_classes": "bx bxl-python", "percentage": 55 },
-        { "name": "JavaScript", "icon_classes": "bx bxl-javascript", "percentage": 60 },
+        { "name": "Python", "icon_classes": "bx bxl-python", "percentage": 90 },
+        { "name": "JavaScript", "icon_classes": "bx bxl-javascript", "percentage": 80 },
         { "name": "Java", "icon_classes": "bx bxl-java", "percentage": 60 },
-        { "name": "C++", "icon_classes": "bx bxl-c-plus-plus", "percentage": 85 }
+        { "name": "C++", "icon_classes": "bx bxl-c-plus-plus", "percentage": 60 }
     ],
 
     "frontEndSkills": [
         { "name": "HTML", "icon_classes": "bx bxl-html5", "percentage": 90 },
-        { "name": "CSS", "icon_classes": "bx bxl-css3", "percentage": 80 },
-        { "name": "JavaScript", "icon_classes": "bx bxl-javascript", "percentage": 60 },
-        { "name": "TypeScript", "icon_classes": "bx bxl-typescript", "percentage": 60 },
+        { "name": "CSS", "icon_classes": "bx bxl-css3", "percentage": 60 },
+        { "name": "JavaScript", "icon_classes": "bx bxl-javascript", "percentage": 80 },
+        { "name": "TypeScript", "icon_classes": "bx bxl-typescript", "percentage": 70 },
         { "name": "React", "icon_classes": "bx bxl-react", "percentage": 85 },
-        { "name": "Vue Js", "icon_classes": "bx bxl-vuejs", "percentage": 70 }
+        { "name": "Vue Js", "icon_classes": "bx bxl-vuejs", "percentage": 60 }
     ],
 
     "backEndSkills": [
-        { "name": "Node Js", "icon_classes": "bx bxl-nodejs", "percentage": 70 },
-        { "name": "Django", "icon_classes": "bx bxl-django", "percentage": 70 },
-        { "name": ".Net", "icon_classes": "bx bxl-microsoft", "percentage": 70 },
-        { "name": "PHP", "icon_classes": "bx bxl-php", "percentage": 80 },
+        { "name": "Node Js", "icon_classes": "bx bxl-nodejs", "percentage": 80 },
+        { "name": "Django", "icon_classes": "bx bxl-django", "percentage": 60 },
+        { "name": ".Net", "icon_classes": "bx bxl-microsoft", "percentage": 60 },
+        { "name": "PHP", "icon_classes": "bx bxl-php", "percentage": 60 },
         { "name": "PostgreSQL", "icon_classes": "bx bxl-postgresql", "percentage": 70 },
-        { "name": "Firebase", "icon_classes": "bx bxl-firebase", "percentage": 90 },
+        { "name": "Firebase", "icon_classes": "bx bxl-firebase", "percentage": 70 },
         { "name": "MongoDB", "icon_classes": "bx bxl-mongodb", "percentage": 90 },
         { "name": "REST API", "icon_classes": "bx bx-code-curly", "percentage": 90 },
         { "name": "JSON", "icon_classes": "bx bxs-file-json", "percentage": 90 },
-        { "name": "GraphQL", "icon_classes": "bx bxl-graphql", "percentage": 90 },
-        { "name": "Python", "icon_classes": "bx bxl-python", "percentage": 55 }
+        { "name": "GraphQL", "icon_classes": "bx bxl-graphql", "percentage": 60 }
       ],
 
       "devopsSkills": [
         { "name": "Git", "icon_classes": "bx bxl-git", "percentage": 90 },
         { "name": "GitHub", "icon_classes": "bx bxl-github", "percentage": 90 },
-        { "name": "GitLab", "icon_classes": "bx bxl-gitlab", "percentage": 90 },
-        { "name": "AWS", "icon_classes": "bx bxl-aws", "percentage": 70 },
-        { "name": "Docker", "icon_classes": "bx bxl-docker", "percentage": 70 },
-        { "name": "Kubernetes", "icon_classes": "bx bxl-kubernetes", "percentage": 80 },
+        { "name": "GitLab", "icon_classes": "bx bxl-gitlab", "percentage": 60 },
+        { "name": "AWS", "icon_classes": "bx bxl-aws", "percentage": 60 },
+        { "name": "Docker", "icon_classes": "bx bxl-docker", "percentage": 60 },
+        { "name": "Kubernetes", "icon_classes": "bx bxl-kubernetes", "percentage": 60 },
         { "name": "Unix/Linux", "icon_classes": "uil uil-linux", "percentage": 70 },
-        { "name": "Unit Testing", "icon_classes": "bx bx-list-check", "percentage": 90 }
+        { "name": "Unit Testing", "icon_classes": "bx bx-list-check", "percentage": 60 }
       ]
 }
