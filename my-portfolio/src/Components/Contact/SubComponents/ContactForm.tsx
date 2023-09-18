@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ContactForm: React.FC = () => {
+const ContactForm: React.FormEventHandler = () => {
     return(
         <form action="" className="contact__form grid">
           <div className="contact__inputs grid">

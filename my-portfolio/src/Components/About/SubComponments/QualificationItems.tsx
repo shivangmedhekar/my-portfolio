@@ -15,11 +15,9 @@ interface QualificationItemProps {
 
     console.log(qualificationItems.length - 1);
     return (
-
-  
         <div className="qualification__container container">
         {/* Map and render qualification items */}
-        {qualificationItems.map((item, i) => (
+        {qualificationItems.map((item: {title: string, subtitle: string, calendar: string}, i: number) => (
             
             <div className="qualification__data" key={i}>
             {i % 2 !== 0 && (

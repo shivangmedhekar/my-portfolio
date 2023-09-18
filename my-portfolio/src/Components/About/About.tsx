@@ -4,7 +4,7 @@ interface DownloadCVButtonProps {
     location: string;
 }
 
-const DownloadCVButton = () => {
+const DownloadCVButton: React.FC = () => {
     return (
         <div className="about__buttons">
             {/* Change your CV */}
@@ -26,9 +26,10 @@ const About: React.FC = () => {
                 <img src="assets/img/about.jpg" alt="" className="about__img" />
 
                 <div className="about__data">
-                    <p className="about__description">I'm a Computer Science Masters student with strong coding skills, 
-                    specializing in web development, cloud computing, and machine learning, 
-                    actively seeking software engineering roles.
+                    <p className="about__description">
+                        I'm a Computer Science Masters student with strong coding skills, 
+                        specializing in web development, cloud computing, and machine learning, 
+                        actively seeking software engineering roles.
                     </p>
 
                     <div className="about__info">
