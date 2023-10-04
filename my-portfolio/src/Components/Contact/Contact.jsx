@@ -18,7 +18,7 @@ const Contact = () => {
             location= {<div dangerouslySetInnerHTML={{ __html: contactData.location }} />
           }
         />
-        <ContactForm />
+        {/* <ContactForm /> */}
         
       </div>
     </section>
