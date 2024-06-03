@@ -24,6 +24,21 @@
 
     "workQualifications": [
         {
+            "title": "Software Engineer",
+            "subtitle": "KeelWorks Foundations",
+            "calendar": "May 2024 - Present"
+        },
+        {
+            "title": "Software Engineer",
+            "subtitle": "Lytus Digital",
+            "calendar": "Feb 2024 - May 2024"
+        },
+        {
+            "title": "Software Engineer",
+            "subtitle": "Software Engineer",
+            "calendar": "June 2020 - July 2021"
+        },
+        {
             "title": "Software Intern",
             "subtitle": "CMP Infotech - Mumbai",
             "calendar": "Nov 2018 - Jan 2019"
