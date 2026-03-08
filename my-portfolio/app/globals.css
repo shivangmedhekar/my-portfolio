@@ -191,11 +191,12 @@
 
   /* Fade-up entrance */
   .animate-fade-up {
+    opacity: 1;
     animation: fade-up 0.5s ease both;
   }
   @keyframes fade-up {
-    from { opacity: 0; transform: translateY(14px); }
-    to   { opacity: 1; transform: translateY(0);    }
+    from { transform: translateY(14px); }
+    to   { transform: translateY(0);    }
   }
 
   /* Scroll-triggered fade used with inline style delay */
