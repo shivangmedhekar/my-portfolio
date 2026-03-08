@@ -1,0 +1,286 @@
+{
+  "header": {
+    "brand": "shivang.dev",
+    "nav": [
+      { "label": "Work", "href": "#experience" },
+      { "label": "Education", "href": "#education" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "contactCta": "Say Hello"
+  },
+  "hero": {
+    "status": "Open to opportunities",
+    "name": "Shivang Medhekar",
+    "typingWords": ["AI Systems.", "Backend APIs.", "Cloud Infra.", "Full-Stack Apps.", "LLM Pipelines."],
+    "bio": "Senior engineer with 7+ years crafting production systems at the intersection of AI, distributed backends, and cloud infrastructure. I care about code quality, system design, and shipping things that actually work.",
+    "stack": ["TypeScript", "Python", "Next.js", "FastAPI", "PostgreSQL", "Redis", "AWS", "LLMs"],
+    "ctas": {
+      "work": { "label": "View My Work", "href": "#experience" },
+      "github": { "label": "GitHub", "href": "https://github.com/shivangmedhekar" },
+      "linkedin": { "label": "LinkedIn", "href": "https://linkedin.com/in/shivangmedhekar" }
+    },
+    "scrollLabel": "scroll"
+  },
+  "experience": {
+    "sectionLabel": "/experience",
+    "title": "Professional Work",
+    "description": "High-impact product and platform work across AI systems, distributed services, and developer tooling.",
+    "scrollHint": "Scroll for more roles",
+    "openDetailsLabel": "Open details",
+    "backdrop": {
+      "commandChips": ["pnpm test", "git push origin main", "kubectl get pods", "docker ps", "terraform plan", "vercel deploy"],
+      "ciStatus": "lint        passed\nunit-tests  passed\nbuild       passed\ndeploy      queued",
+      "terminal": "$ npm run build\n> next build\n✓ Compiled successfully\n✓ Collecting page data\n✓ Generating static pages",
+      "serviceHealth": "api-gateway      healthy\nworker-sync      healthy\nqueue-latency    28ms\nerror-rate       0.06%",
+      "apiLogs": "GET /v1/projects 200 34ms\nPOST /v1/events 202 12ms\nworker: queue=sync status=ok",
+      "release": "release/2026.03.07 · uptime 99.9% · p99 120ms"
+    },
+    "jobs": [
+      {
+        "period": "2022 - Present",
+        "role": "Senior Full-Stack AI Engineer",
+        "company": "TechCorp AI",
+        "location": "San Francisco, CA",
+        "type": "Full-time",
+        "summary": "Lead engineer on the core AI platform - LLM orchestration, multi-tenant infra, and real-time data pipelines powering Fortune 500 clients.",
+        "bullets": [
+          "Architected a multi-tenant LLM orchestration platform (RAG + fine-tuning) serving Fortune 500 clients with 99.9% uptime",
+          "Cut p99 API latency by 65% through query optimisation, Redis caching, and Postgres connection pooling",
+          "Led a team of 6 engineers; established code review standards, on-call rotations, and incident runbooks",
+          "Built real-time data pipelines processing 500K+ events/day with Kafka and Apache Flink",
+          "Migrated a legacy monolith to microservices on Kubernetes, raising deploy frequency from weekly to multiple times daily"
+        ],
+        "tech": ["TypeScript", "Python", "Next.js", "FastAPI", "PostgreSQL", "Redis", "Kafka", "Kubernetes", "AWS", "OpenAI API"],
+        "metrics": [
+          { "label": "latency cut", "value": "65%" },
+          { "label": "users served", "value": "100K+" },
+          { "label": "team led", "value": "6 eng" }
+        ]
+      },
+      {
+        "period": "2020 - 2022",
+        "role": "Full-Stack Engineer",
+        "company": "CloudScale Systems",
+        "location": "Remote",
+        "type": "Full-time",
+        "summary": "Designed and operated microservices handling 10M+ daily requests with 99.9% uptime SLA across GCP infrastructure.",
+        "bullets": [
+          "Built a microservices architecture across 12 services processing 10M+ API requests daily",
+          "Introduced GitHub Actions + ArgoCD pipelines, cutting deploy time from 40 min to under 8 min",
+          "Deployed a full observability stack (Prometheus, Grafana, Loki) - sub-5-minute MTTR",
+          "Built a self-service developer portal that reduced engineer onboarding time by 60%",
+          "Authored all cloud resources in Terraform, eliminating config drift across staging and production"
+        ],
+        "tech": ["React", "Node.js", "Go", "MongoDB", "Docker", "Terraform", "GCP", "GitHub Actions", "ArgoCD", "Prometheus"],
+        "metrics": [
+          { "label": "daily requests", "value": "10M+" },
+          { "label": "deploy time", "value": "80% down" },
+          { "label": "uptime", "value": "99.9%" }
+        ]
+      },
+      {
+        "period": "2018 - 2020",
+        "role": "Backend Engineer",
+        "company": "StartupXYZ",
+        "location": "Mumbai, India",
+        "type": "Full-time",
+        "summary": "Built core API infrastructure and real-time features from zero at a seed-stage fintech startup reaching 50K active users.",
+        "bullets": [
+          "Designed REST and GraphQL APIs for a consumer fintech product reaching 50K active users",
+          "Added multi-layer caching (Redis + CDN), improving median response time by 80%",
+          "Built a real-time notification system using WebSockets, Celery, and RabbitMQ",
+          "Wrote a migration framework enabling zero-downtime schema changes on large Postgres tables",
+          "Mentored 2 junior engineers through weekly code reviews and architecture sessions"
+        ],
+        "tech": ["Python", "Django", "GraphQL", "PostgreSQL", "Redis", "Celery", "RabbitMQ", "Nginx"],
+        "metrics": [
+          { "label": "response time", "value": "80% down" },
+          { "label": "active users", "value": "50K" },
+          { "label": "engineers mentored", "value": "2" }
+        ]
+      },
+      {
+        "period": "2017 - 2018",
+        "role": "Software Engineering Intern",
+        "company": "DataForge Labs",
+        "location": "Pune, India",
+        "type": "Internship",
+        "summary": "Worked on backend reliability and internal tooling for analytics products used by enterprise customers.",
+        "bullets": [
+          "Built internal APIs for event ingestion and reporting workflows using Python and PostgreSQL",
+          "Reduced failed cron jobs by 70% by adding retry policies, alerts, and runbook-based incident handling",
+          "Created a lightweight admin dashboard to monitor ingestion health and pipeline lag",
+          "Improved test coverage for critical services and added CI checks for schema migrations",
+          "Partnered with senior engineers on production debugging and post-incident follow-ups"
+        ],
+        "tech": ["Python", "Flask", "PostgreSQL", "Redis", "Docker", "GitLab CI"],
+        "metrics": [
+          { "label": "job failures", "value": "70% down" },
+          { "label": "pipelines", "value": "15+" },
+          { "label": "team size", "value": "5 eng" }
+        ]
+      },
+      {
+        "period": "2016 - 2017",
+        "role": "Freelance Full-Stack Developer",
+        "company": "Independent",
+        "location": "Remote",
+        "type": "Contract",
+        "summary": "Delivered MVPs and internal web tools for early-stage startups across fintech, edtech, and SaaS.",
+        "bullets": [
+          "Shipped 8+ client projects end-to-end from discovery to deployment",
+          "Designed responsive dashboards and CRUD workflows with React and Node.js",
+          "Set up CI/CD pipelines and cloud deployments to shorten release cycles",
+          "Implemented role-based auth and audit logging for business-critical workflows",
+          "Maintained post-launch support with bug fixes and incremental feature delivery"
+        ],
+        "tech": ["React", "Node.js", "Express", "MongoDB", "AWS", "Netlify"],
+        "metrics": [
+          { "label": "projects shipped", "value": "8+" },
+          { "label": "avg delivery", "value": "4-6 wks" },
+          { "label": "retention", "value": "90%" }
+        ]
+      },
+      {
+        "period": "2015 - 2016",
+        "role": "Junior Web Developer",
+        "company": "PixelStack Studio",
+        "location": "Mumbai, India",
+        "type": "Full-time",
+        "summary": "Built and maintained customer-facing websites and admin panels for SMB clients.",
+        "bullets": [
+          "Implemented reusable frontend components and improved cross-browser compatibility",
+          "Optimized page load performance with asset compression and lazy loading strategies",
+          "Integrated REST APIs and payment workflows for e-commerce use cases",
+          "Worked closely with designers to convert wireframes into production-ready interfaces",
+          "Handled maintenance releases and monitoring for high-traffic campaign pages"
+        ],
+        "tech": ["JavaScript", "React", "Next.js", "Node.js", "MySQL", "Nginx"],
+        "metrics": [
+          { "label": "sites delivered", "value": "20+" },
+          { "label": "load time", "value": "45% down" },
+          { "label": "uptime", "value": "99.5%" }
+        ]
+      }
+    ]
+  },
+  "education": {
+    "sectionLabel": "/education",
+    "title": "Education",
+    "description": "Academic foundation in systems, machine learning, and software engineering.",
+    "backdrop": {
+      "tags": ["algorithms", "distributed systems", "nlp", "research", "teaching", "open source"],
+      "researchNotes": "model: transformer-small\ndataset: domain-nlp-v3\nepoch: 24\nval-loss: 0.112",
+      "courseworkLog": "CS224N      completed\nDistributed Systems  completed\nAdvanced Algorithms  completed"
+    },
+    "items": [
+      {
+        "period": "2016 — 2018",
+        "degree": "M.S. Computer Science",
+        "school": "Stanford University",
+        "location": "Stanford, CA",
+        "focus": "Machine Learning & Distributed Systems",
+        "highlights": [
+          "Graduate Research Assistant — NLP & transformer architectures",
+          "Teaching Assistant for CS224N: NLP with Deep Learning",
+          "Thesis: Efficient Fine-tuning of Large Language Models for Domain Adaptation"
+        ]
+      },
+      {
+        "period": "2012 — 2016",
+        "degree": "B.Tech Computer Science & Engineering",
+        "school": "Indian Institute of Technology",
+        "location": "Mumbai, India",
+        "focus": "Algorithms, Systems & Software Engineering",
+        "highlights": [
+          "Dept. rank #3 of 180 students",
+          "Led technical team at national college hackathon — 1st place",
+          "Open-source: 2K+ GitHub stars on data-structures library"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "sectionLabel": "/projects",
+    "title": "Featured Projects",
+    "projectsPerPage": 4,
+    "items": [
+      {
+        "title": "AI Code Assistant",
+        "desc": "VS Code extension with real-time code analysis powered by fine-tuned LLMs. 50K+ active installs.",
+        "tech": ["TypeScript", "Python", "LLaMA", "pgvector"],
+        "href": "#"
+      },
+      {
+        "title": "Distributed Cache Engine",
+        "desc": "High-throughput caching layer supporting 1M+ ops/sec. Built in Rust with a Redis-compatible protocol.",
+        "tech": ["Rust", "Redis", "gRPC", "Kubernetes"],
+        "href": "#"
+      },
+      {
+        "title": "ML Pipeline Orchestrator",
+        "desc": "Workflow engine for ML experiments — feature engineering, training, evaluation, and deployment in one DAG.",
+        "tech": ["Python", "Airflow", "TensorFlow", "MLflow"],
+        "href": "#"
+      },
+      {
+        "title": "Real-time Analytics Dashboard",
+        "desc": "Streaming analytics UI processing 100K events/sec using a WebSocket + TimescaleDB architecture.",
+        "tech": ["React", "Node.js", "Kafka", "TimescaleDB"],
+        "href": "#"
+      },
+      {
+        "title": "GraphQL API Gateway",
+        "desc": "Unified GraphQL layer over heterogeneous microservices with intelligent query batching and cache.",
+        "tech": ["GraphQL", "Node.js", "Redis", "PostgreSQL"],
+        "href": "#"
+      },
+      {
+        "title": "Neural Network Playground",
+        "desc": "Interactive browser-based tool for visually constructing, training and inspecting neural networks.",
+        "tech": ["React", "TensorFlow.js", "D3.js", "WebGL"],
+        "href": "#"
+      }
+    ]
+  },
+  "contact": {
+    "sectionLabel": "/contact",
+    "title": "Get in touch",
+    "description": "Whether you have a project, a role, or just want to talk engineering — I'm always happy to chat.",
+    "email": "shivang@example.com",
+    "linkedIn": {
+      "name": "Shivang Medhekar",
+      "href": "https://linkedin.com/in/shivangmedhekar"
+    },
+    "socials": [
+      { "label": "GitHub", "href": "https://github.com/shivangmedhekar", "handle": "@shivangmedhekar", "icon": "github" },
+      { "label": "Twitter / X", "href": "https://twitter.com/shivangm", "handle": "@shivangm", "icon": "twitter" }
+    ],
+    "availability": "Open to new opportunities",
+    "copyright": "© 2025 Shivang Medhekar",
+    "backdrop": {
+      "model": "model: ai-assistant-v1",
+      "embeddings": "embeddings: semantic-search"
+    }
+  },
+  "chatBot": {
+    "buttonLabel": "Ask Shivang",
+    "title": "Ask Shivang",
+    "clearLabel": "Clear Chat",
+    "inputPlaceholder": "Ask anything...",
+    "initialMessage": "Hi! I'm an AI assistant that knows Shivang's work inside-out. Ask me anything about his experience, skills, or projects.",
+    "suggestions": [
+      "What tech stack do you work with?",
+      "Tell me about your AI experience",
+      "Are you open to new roles?"
+    ],
+    "responses": [
+      "Great question! I specialize in full-stack AI systems — from LLM orchestration and RAG pipelines to scalable backend APIs and cloud infrastructure. TypeScript and Python are my bread and butter.",
+      "I've spent the last few years building AI-powered products at scale — fine-tuning LLMs, building RAG systems, and shipping multi-tenant AI platforms to Fortune 500 clients.",
+      "Yes! I'm currently open to senior engineering roles, particularly those intersecting AI and distributed systems. Feel free to reach out via the contact section.",
+      "My backend stack is primarily Python (FastAPI, Django) and Node.js, with PostgreSQL, Redis, and Kafka. For infra, I lean on AWS, Kubernetes, and Terraform.",
+      "I've led teams of up to 6 engineers, set up on-call rotations, established code review standards, and built observability stacks from scratch."
+    ]
+  }
+}
