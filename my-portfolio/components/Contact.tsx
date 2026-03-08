@@ -1,6 +1,6 @@
 'use client';
 
-import { Mail, Linkedin, Github, Twitter, Copy, Check, ArrowUpRight } from 'lucide-react';
+import { Mail, Linkedin, Github, Twitter, Link, Copy, Check, ArrowUpRight } from 'lucide-react';
 import { useState } from 'react';
 import siteData from '@/data.json';
 
@@ -9,6 +9,7 @@ const { contact } = siteData;
 const SOCIAL_ICONS = {
   github: Github,
   twitter: Twitter,
+  linkedin: Linkedin,
 } as const;
 
 function ContactBackdrop() {
@@ -132,7 +133,7 @@ export default function Contact() {
         {/* Other socials — minimal text list */}
         <div className="flex flex-col gap-1 border-t border-border/40 pt-8">
           {contact.socials.map(({ label, href, handle, icon }) => {
-            const Icon = SOCIAL_ICONS[icon as keyof typeof SOCIAL_ICONS];
+            const Icon = SOCIAL_ICONS[icon as keyof typeof SOCIAL_ICONS] ?? Link;
             return (
             <a
               key={label}

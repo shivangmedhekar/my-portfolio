@@ -1,6 +1,6 @@
 {
   "header": {
-    "brand": "shivang.dev",
+    "brand": "smedhekar",
     "nav": [
       { "label": "Work", "href": "#experience" },
       { "label": "Education", "href": "#education" },
@@ -10,11 +10,11 @@
     "contactCta": "Say Hello"
   },
   "hero": {
-    "status": "Open to opportunities",
+    "status": "AI Full Stack Software Engineer",
     "name": "Shivang Medhekar",
-    "typingWords": ["AI Systems.", "Backend APIs.", "Cloud Infra.", "Full-Stack Apps.", "LLM Pipelines."],
-    "bio": "Senior engineer with 7+ years crafting production systems at the intersection of AI, distributed backends, and cloud infrastructure. I care about code quality, system design, and shipping things that actually work.",
-    "stack": ["TypeScript", "Python", "Next.js", "FastAPI", "PostgreSQL", "Redis", "AWS", "LLMs"],
+    "typingWords": ["Agentic AI", "RAG Systems", "Cloud Backend", "Full-Stack Apps", "LLM Workflows"],
+    "bio": "AI Full Stack Software Engineer with experience building production-grade AI systems, including retrieval-augmented generation, agent-based workflows, and scalable backend services across AWS cloud-native architectures.",
+    "stack": ["Python", "JavaScript", "React", "Next.js", "FastAPI", "AWS", "LLM's", "Agentic AI"],
     "ctas": {
       "work": { "label": "View My Work", "href": "#experience" },
       "github": { "label": "GitHub", "href": "https://github.com/shivangmedhekar" },
@@ -25,142 +25,86 @@
   "experience": {
     "sectionLabel": "/experience",
     "title": "Professional Work",
-    "description": "High-impact product and platform work across AI systems, distributed services, and developer tooling.",
+    "description": "Hands-on delivery across AI platforms, multi-agent orchestration, event-driven backend systems, and full-stack product engineering.",
     "scrollHint": "Scroll for more roles",
     "openDetailsLabel": "Open details",
     "backdrop": {
-      "commandChips": ["pnpm test", "git push origin main", "kubectl get pods", "docker ps", "terraform plan", "vercel deploy"],
-      "ciStatus": "lint        passed\nunit-tests  passed\nbuild       passed\ndeploy      queued",
+      "commandChips": ["npm run build", "docker ps", "aws ecs list-clusters", "terraform plan", "git push origin main", "pnpm test"],
+      "ciStatus": "lint        passed\nunit-tests  passed\nbuild       passed\ndeploy      running",
       "terminal": "$ npm run build\n> next build\n✓ Compiled successfully\n✓ Collecting page data\n✓ Generating static pages",
-      "serviceHealth": "api-gateway      healthy\nworker-sync      healthy\nqueue-latency    28ms\nerror-rate       0.06%",
-      "apiLogs": "GET /v1/projects 200 34ms\nPOST /v1/events 202 12ms\nworker: queue=sync status=ok",
-      "release": "release/2026.03.07 · uptime 99.9% · p99 120ms"
+      "serviceHealth": "rag-api          healthy\nagent-worker      healthy\nqueue-latency     32ms\nerror-rate        0.08%",
+      "apiLogs": "POST /v1/agent/run 202 18ms\nGET /v1/docs/query 200 41ms\nworker: queue=billing status=ok",
+      "release": "release/2026.03.08 · uptime 99.9% · p99 140ms"
     },
     "jobs": [
       {
-        "period": "2022 - Present",
-        "role": "Senior Full-Stack AI Engineer",
-        "company": "TechCorp AI",
-        "location": "San Francisco, CA",
-        "type": "Full-time",
-        "summary": "Lead engineer on the core AI platform - LLM orchestration, multi-tenant infra, and real-time data pipelines powering Fortune 500 clients.",
+        "period": "Feb 2024 - Present",
+        "role": "Senior Software Engineer",
+        "company": "Lexim AI",
+        "location": "Hoboken, NJ",
+        "type": "Remote",
+        "summary": "Built and scaled AI platforms with multi-agent workflows, RAG pipelines, event-driven AWS services, and production-ready billing and notification systems.",
         "bullets": [
-          "Architected a multi-tenant LLM orchestration platform (RAG + fine-tuning) serving Fortune 500 clients with 99.9% uptime",
-          "Cut p99 API latency by 65% through query optimisation, Redis caching, and Postgres connection pooling",
-          "Led a team of 6 engineers; established code review standards, on-call rotations, and incident runbooks",
-          "Built real-time data pipelines processing 500K+ events/day with Kafka and Apache Flink",
-          "Migrated a legacy monolith to microservices on Kubernetes, raising deploy frequency from weekly to multiple times daily"
+          "Designed and built a scalable AI platform supporting multi-agent workflows and retrieval pipelines across multiple internal use cases.",
+          "Implemented state-driven agent execution and RAG, improving response accuracy and reducing repeated processing.",
+          "Integrated guardrails and validation mechanisms to increase source-grounded responses and system reliability.",
+          "Deployed backend services on AWS ECS/Fargate and EC2 capacity providers with asynchronous pipelines using SNS, SQS, and Lambda to support hundreds of AI tasks per day.",
+          "Designed and implemented agentic AI workflows with planning, execution, and verification phases using role-based agents for retrieval, reasoning, and validation.",
+          "Integrated Google Gemini, OpenAI, and Perplexity with dynamic model selection, tool-calling, and API orchestration.",
+          "Built Lexim Query, a conversational chatbot with document-centric RAG and near-real-time ingestion into AWS Knowledge Bases.",
+          "Designed billing schema and AWS Lambda cost pipelines, integrated Stripe subscriptions/webhooks, and built audit-ready reconciliation workflows.",
+          "Built event-driven notification pipelines with SNS, SQS, Lambda, and SES, including retry handling and in-app notification persistence.",
+          "Led development of RegIntel using React frontend plus Flask/FastAPI backend services with MySQL-backed regulatory intelligence workflows."
         ],
-        "tech": ["TypeScript", "Python", "Next.js", "FastAPI", "PostgreSQL", "Redis", "Kafka", "Kubernetes", "AWS", "OpenAI API"],
+        "tech": ["Python", "JavaScript", "React", "Next.js", "FastAPI", "Flask", "MySQL", "AWS ECS", "Fargate", "Lambda", "SNS", "SQS", "SES", "Stripe", "Gemini", "OpenAI"],
         "metrics": [
-          { "label": "latency cut", "value": "65%" },
-          { "label": "users served", "value": "100K+" },
-          { "label": "team led", "value": "6 eng" }
+          { "label": "ai tasks/day", "value": "100s" },
+          { "label": "doc lookup time", "value": "~50% down" },
+          { "label": "deployment", "value": "prod on AWS" }
         ]
       },
       {
-        "period": "2020 - 2022",
-        "role": "Full-Stack Engineer",
-        "company": "CloudScale Systems",
-        "location": "Remote",
-        "type": "Full-time",
-        "summary": "Designed and operated microservices handling 10M+ daily requests with 99.9% uptime SLA across GCP infrastructure.",
+        "period": "May 2023 - Feb 2024",
+        "role": "Lead Software Engineer",
+        "company": "KeelWorks Foundation",
+        "location": "Jersey City, NJ",
+        "type": "Remote",
+        "summary": "Led frontend delivery of internal web products focused on knowledge discovery, unified access, and secure authentication across internal applications.",
         "bullets": [
-          "Built a microservices architecture across 12 services processing 10M+ API requests daily",
-          "Introduced GitHub Actions + ArgoCD pipelines, cutting deploy time from 40 min to under 8 min",
-          "Deployed a full observability stack (Prometheus, Grafana, Loki) - sub-5-minute MTTR",
-          "Built a self-service developer portal that reduced engineer onboarding time by 60%",
-          "Authored all cloud resources in Terraform, eliminating config drift across staging and production"
+          "Led frontend development of KeelCompass, an internal knowledge base application to centralize and surface organizational knowledge.",
+          "Built a React-based web app focused on usability, performance, and maintainable component architecture.",
+          "Translated Figma designs into responsive, production-ready UI components.",
+          "Collaborated with stakeholders to improve information architecture and content discoverability.",
+          "Designed and implemented KeelHub, a centralized hub for navigating and accessing internal tools.",
+          "Contributed to UI and UX design to create a consistent and intuitive entry point across the internal product ecosystem.",
+          "Implemented centralized authentication with Google OAuth (SSO) for seamless secure access.",
+          "Improved onboarding and access management by unifying identity and navigation under one platform."
         ],
-        "tech": ["React", "Node.js", "Go", "MongoDB", "Docker", "Terraform", "GCP", "GitHub Actions", "ArgoCD", "Prometheus"],
+        "tech": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Google OAuth", "Figma"],
         "metrics": [
-          { "label": "daily requests", "value": "10M+" },
-          { "label": "deploy time", "value": "80% down" },
-          { "label": "uptime", "value": "99.9%" }
+          { "label": "projects", "value": "2" },
+          { "label": "focus", "value": "UI/UX + Frontend" },
+          { "label": "auth", "value": "Google SSO" }
         ]
       },
       {
-        "period": "2018 - 2020",
-        "role": "Backend Engineer",
-        "company": "StartupXYZ",
-        "location": "Mumbai, India",
-        "type": "Full-time",
-        "summary": "Built core API infrastructure and real-time features from zero at a seed-stage fintech startup reaching 50K active users.",
+        "period": "Jun 2020 - Jul 2021",
+        "role": "Software Engineer",
+        "company": "Inceps Consultancy Pvt. Ltd.",
+        "location": "Mumbai, MH, IND",
+        "type": "Onsite",
+        "summary": "Improved ERP workflows and platform reliability while modernizing frontend code and introducing AWS serverless async processing.",
         "bullets": [
-          "Designed REST and GraphQL APIs for a consumer fintech product reaching 50K active users",
-          "Added multi-layer caching (Redis + CDN), improving median response time by 80%",
-          "Built a real-time notification system using WebSockets, Celery, and RabbitMQ",
-          "Wrote a migration framework enabling zero-downtime schema changes on large Postgres tables",
-          "Mentored 2 junior engineers through weekly code reviews and architecture sessions"
+          "Enhanced ERP-driven internal workflows, improving operational efficiency by 30% and reducing task completion time from 2 hours to 1.5 hours.",
+          "Improved technical issue resolution processes, reducing average resolution time from 24 to 18 hours and increasing overall system uptime.",
+          "Developed AWS Lambda functions for asynchronous processing, reducing infrastructure costs and improving response times by 30%.",
+          "Refactored legacy frontend codebases to improve maintainability and reduce technical debt, resulting in a 25% performance improvement."
         ],
-        "tech": ["Python", "Django", "GraphQL", "PostgreSQL", "Redis", "Celery", "RabbitMQ", "Nginx"],
+        "tech": ["JavaScript", "Python", "AWS Lambda", "ERP Systems", "Frontend Modernization"],
         "metrics": [
-          { "label": "response time", "value": "80% down" },
-          { "label": "active users", "value": "50K" },
-          { "label": "engineers mentored", "value": "2" }
-        ]
-      },
-      {
-        "period": "2017 - 2018",
-        "role": "Software Engineering Intern",
-        "company": "DataForge Labs",
-        "location": "Pune, India",
-        "type": "Internship",
-        "summary": "Worked on backend reliability and internal tooling for analytics products used by enterprise customers.",
-        "bullets": [
-          "Built internal APIs for event ingestion and reporting workflows using Python and PostgreSQL",
-          "Reduced failed cron jobs by 70% by adding retry policies, alerts, and runbook-based incident handling",
-          "Created a lightweight admin dashboard to monitor ingestion health and pipeline lag",
-          "Improved test coverage for critical services and added CI checks for schema migrations",
-          "Partnered with senior engineers on production debugging and post-incident follow-ups"
-        ],
-        "tech": ["Python", "Flask", "PostgreSQL", "Redis", "Docker", "GitLab CI"],
-        "metrics": [
-          { "label": "job failures", "value": "70% down" },
-          { "label": "pipelines", "value": "15+" },
-          { "label": "team size", "value": "5 eng" }
-        ]
-      },
-      {
-        "period": "2016 - 2017",
-        "role": "Freelance Full-Stack Developer",
-        "company": "Independent",
-        "location": "Remote",
-        "type": "Contract",
-        "summary": "Delivered MVPs and internal web tools for early-stage startups across fintech, edtech, and SaaS.",
-        "bullets": [
-          "Shipped 8+ client projects end-to-end from discovery to deployment",
-          "Designed responsive dashboards and CRUD workflows with React and Node.js",
-          "Set up CI/CD pipelines and cloud deployments to shorten release cycles",
-          "Implemented role-based auth and audit logging for business-critical workflows",
-          "Maintained post-launch support with bug fixes and incremental feature delivery"
-        ],
-        "tech": ["React", "Node.js", "Express", "MongoDB", "AWS", "Netlify"],
-        "metrics": [
-          { "label": "projects shipped", "value": "8+" },
-          { "label": "avg delivery", "value": "4-6 wks" },
-          { "label": "retention", "value": "90%" }
-        ]
-      },
-      {
-        "period": "2015 - 2016",
-        "role": "Junior Web Developer",
-        "company": "PixelStack Studio",
-        "location": "Mumbai, India",
-        "type": "Full-time",
-        "summary": "Built and maintained customer-facing websites and admin panels for SMB clients.",
-        "bullets": [
-          "Implemented reusable frontend components and improved cross-browser compatibility",
-          "Optimized page load performance with asset compression and lazy loading strategies",
-          "Integrated REST APIs and payment workflows for e-commerce use cases",
-          "Worked closely with designers to convert wireframes into production-ready interfaces",
-          "Handled maintenance releases and monitoring for high-traffic campaign pages"
-        ],
-        "tech": ["JavaScript", "React", "Next.js", "Node.js", "MySQL", "Nginx"],
-        "metrics": [
-          { "label": "sites delivered", "value": "20+" },
-          { "label": "load time", "value": "45% down" },
-          { "label": "uptime", "value": "99.5%" }
+          { "label": "ops efficiency", "value": "+30%" },
+          { "label": "resolution time", "value": "24h to 18h" },
+          { "label": "frontend perf", "value": "+25%" }
         ]
       }
     ]
@@ -168,35 +112,35 @@
   "education": {
     "sectionLabel": "/education",
     "title": "Education",
-    "description": "Academic foundation in systems, machine learning, and software engineering.",
+    "description": "Formal training in computer science with focus on software engineering and distributed systems foundations.",
     "backdrop": {
-      "tags": ["algorithms", "distributed systems", "nlp", "research", "teaching", "open source"],
-      "researchNotes": "model: transformer-small\ndataset: domain-nlp-v3\nepoch: 24\nval-loss: 0.112",
-      "courseworkLog": "CS224N      completed\nDistributed Systems  completed\nAdvanced Algorithms  completed"
+      "tags": ["computer science", "software engineering", "distributed systems", "ai systems", "cloud architecture", "problem solving"],
+      "researchNotes": "track: ms-computer-science\nfocus: software-systems\nstatus: completed",
+      "courseworkLog": "Distributed Systems      completed\nAlgorithms               completed\nSoftware Engineering     completed"
     },
     "items": [
       {
-        "period": "2016 — 2018",
-        "degree": "M.S. Computer Science",
-        "school": "Stanford University",
-        "location": "Stanford, CA",
-        "focus": "Machine Learning & Distributed Systems",
+        "period": "Aug 2021 - Dec 2023",
+        "degree": "M.S. in Computer Science",
+        "school": "Stevens Institute of Technology",
+        "location": "Hoboken, NJ",
+        "focus": "Computer Science",
         "highlights": [
-          "Graduate Research Assistant — NLP & transformer architectures",
-          "Teaching Assistant for CS224N: NLP with Deep Learning",
-          "Thesis: Efficient Fine-tuning of Large Language Models for Domain Adaptation"
+          "Graduate studies focused on applied software engineering and modern computing systems.",
+          "Built advanced academic and practical foundation in full-stack software development.",
+          "Completed degree in December 2023."
         ]
       },
       {
-        "period": "2012 — 2016",
-        "degree": "B.Tech Computer Science & Engineering",
-        "school": "Indian Institute of Technology",
-        "location": "Mumbai, India",
-        "focus": "Algorithms, Systems & Software Engineering",
+        "period": "Aug 2016 - May 2020",
+        "degree": "B.E. in Computer Engineering",
+        "school": "University of Mumbai",
+        "location": "Mumbai, MH, IND",
+        "focus": "Computer Engineering",
         "highlights": [
-          "Dept. rank #3 of 180 students",
-          "Led technical team at national college hackathon — 1st place",
-          "Open-source: 2K+ GitHub stars on data-structures library"
+          "Built strong fundamentals in programming, data structures, systems, and software design.",
+          "Completed engineering degree in May 2020.",
+          "Developed early project and internship experience in web and backend engineering."
         ]
       }
     ]
@@ -207,61 +151,73 @@
     "projectsPerPage": 4,
     "items": [
       {
-        "title": "AI Code Assistant",
-        "desc": "VS Code extension with real-time code analysis powered by fine-tuned LLMs. 50K+ active installs.",
-        "tech": ["TypeScript", "Python", "LLaMA", "pgvector"],
-        "href": "#"
+        "title": "Praxis AI Platform",
+        "desc": "Scalable AI platform supporting multi-agent workflows, state-driven execution, RAG pipelines, and production guardrails.",
+        "tech": ["Python", "FastAPI", "AWS", "RAG", "Agentic AI"],
+        "href": "https://lexim.ai"
       },
       {
-        "title": "Distributed Cache Engine",
-        "desc": "High-throughput caching layer supporting 1M+ ops/sec. Built in Rust with a Redis-compatible protocol.",
-        "tech": ["Rust", "Redis", "gRPC", "Kubernetes"],
-        "href": "#"
+        "title": "Agentic AI Workflow Engine",
+        "desc": "Role-based multi-agent architecture with planning, execution, validation, memory, and human-in-the-loop guardrails.",
+        "tech": ["LangGraph", "OpenAI", "Gemini", "Tool Calling", "Validation Loops"],
+        "href": "https://lexim.ai"
       },
       {
-        "title": "ML Pipeline Orchestrator",
-        "desc": "Workflow engine for ML experiments — feature engineering, training, evaluation, and deployment in one DAG.",
-        "tech": ["Python", "Airflow", "TensorFlow", "MLflow"],
-        "href": "#"
+        "title": "Lexim Query",
+        "desc": "Conversational AI with document-centric retrieval and near-real-time ingestion into AWS Knowledge Bases for source-grounded responses.",
+        "tech": ["RAG", "Semantic Search", "AWS Knowledge Bases", "FastAPI"],
+        "href": "https://lexim.ai"
       },
       {
-        "title": "Real-time Analytics Dashboard",
-        "desc": "Streaming analytics UI processing 100K events/sec using a WebSocket + TimescaleDB architecture.",
-        "tech": ["React", "Node.js", "Kafka", "TimescaleDB"],
-        "href": "#"
+        "title": "AI Agent Billing Platform",
+        "desc": "Usage-based billing engine with Stripe integration, event-driven reconciliation, and per-agent cost attribution.",
+        "tech": ["AWS Lambda", "SNS", "SQS", "Stripe", "SQL"],
+        "href": "https://lexim.ai"
       },
       {
-        "title": "GraphQL API Gateway",
-        "desc": "Unified GraphQL layer over heterogeneous microservices with intelligent query batching and cache.",
-        "tech": ["GraphQL", "Node.js", "Redis", "PostgreSQL"],
-        "href": "#"
+        "title": "AI Agent Notifications",
+        "desc": "Event-driven notification system with reliable async delivery, retries, SES email, and in-app persistence.",
+        "tech": ["AWS Lambda", "SNS", "SQS", "SES", "NoSQL"],
+        "href": "https://lexim.ai"
       },
       {
-        "title": "Neural Network Playground",
-        "desc": "Interactive browser-based tool for visually constructing, training and inspecting neural networks.",
-        "tech": ["React", "TensorFlow.js", "D3.js", "WebGL"],
-        "href": "#"
+        "title": "RegIntel Platform",
+        "desc": "Regulatory intelligence platform with React frontend, Flask/FastAPI backend, and MySQL-backed AI insights workflows.",
+        "tech": ["React", "Flask", "FastAPI", "MySQL", "AI Search"],
+        "href": "https://lexim.ai"
+      },
+      {
+        "title": "KeelCompass",
+        "desc": "Internal knowledge base application for centralized organizational knowledge and improved discoverability.",
+        "tech": ["React", "TypeScript", "UI Architecture"],
+        "href": "https://keelworks.org"
+      },
+      {
+        "title": "KeelHub",
+        "desc": "Centralized internal app hub with Google OAuth SSO, unified navigation, and improved onboarding experience.",
+        "tech": ["React", "Google OAuth", "Frontend", "UX"],
+        "href": "https://keelworks.org"
       }
     ]
   },
   "contact": {
     "sectionLabel": "/contact",
     "title": "Get in touch",
-    "description": "Whether you have a project, a role, or just want to talk engineering — I'm always happy to chat.",
-    "email": "shivang@example.com",
+    "description": "Reach out for AI full-stack roles, consulting, or collaboration on production-grade agentic and RAG systems.",
+    "email": "shivangmedhekar@gmail.com",
     "linkedIn": {
       "name": "Shivang Medhekar",
       "href": "https://linkedin.com/in/shivangmedhekar"
     },
     "socials": [
       { "label": "GitHub", "href": "https://github.com/shivangmedhekar", "handle": "@shivangmedhekar", "icon": "github" },
-      { "label": "Twitter / X", "href": "https://twitter.com/shivangm", "handle": "@shivangm", "icon": "twitter" }
+      { "label": "LinkedIn", "href": "https://linkedin.com/in/shivangmedhekar", "handle": "/in/shivangmedhekar", "icon": "linkedin" }
     ],
-    "availability": "Open to new opportunities",
-    "copyright": "© 2025 Shivang Medhekar",
+    "availability": "AI Full Stack",
+    "copyright": "© 2026 Shivang Medhekar",
     "backdrop": {
-      "model": "model: ai-assistant-v1",
-      "embeddings": "embeddings: semantic-search"
+      "model": "model: multi-agent-rag-stack",
+      "embeddings": "embeddings: vector-search-enabled"
     }
   },
   "chatBot": {
@@ -269,18 +225,18 @@
     "title": "Ask Shivang",
     "clearLabel": "Clear Chat",
     "inputPlaceholder": "Ask anything...",
-    "initialMessage": "Hi! I'm an AI assistant that knows Shivang's work inside-out. Ask me anything about his experience, skills, or projects.",
+    "initialMessage": "Hi! I can answer questions about Shivang's AI full-stack experience, agentic workflows, RAG systems, and cloud architecture work.",
     "suggestions": [
-      "What tech stack do you work with?",
-      "Tell me about your AI experience",
-      "Are you open to new roles?"
+      "What AI systems have you built?",
+      "Tell me about your work at Lexim AI",
+      "What is your core tech stack?"
     ],
     "responses": [
-      "Great question! I specialize in full-stack AI systems — from LLM orchestration and RAG pipelines to scalable backend APIs and cloud infrastructure. TypeScript and Python are my bread and butter.",
-      "I've spent the last few years building AI-powered products at scale — fine-tuning LLMs, building RAG systems, and shipping multi-tenant AI platforms to Fortune 500 clients.",
-      "Yes! I'm currently open to senior engineering roles, particularly those intersecting AI and distributed systems. Feel free to reach out via the contact section.",
-      "My backend stack is primarily Python (FastAPI, Django) and Node.js, with PostgreSQL, Redis, and Kafka. For infra, I lean on AWS, Kubernetes, and Terraform.",
-      "I've led teams of up to 6 engineers, set up on-call rotations, established code review standards, and built observability stacks from scratch."
+      "I build production-grade AI systems using RAG, multi-agent workflows, and scalable backend services on AWS.",
+      "At Lexim AI, I worked across Praxis AI, Agentic AI systems, Lexim Query, billing pipelines, notifications, and the RegIntel platform.",
+      "My core stack includes Python, JavaScript, React, Next.js, FastAPI, Flask, AWS Lambda, ECS/Fargate, SNS, and SQS.",
+      "I design agent workflows with planning, execution, and validation, and add guardrails like reflection loops and human-in-the-loop review.",
+      "I am open to full-time AI software engineering opportunities and collaboration on production AI systems."
     ]
   }
 }
