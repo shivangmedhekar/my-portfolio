@@ -41,8 +41,8 @@ export default function Home() {
       <SplashScreen phase={splashPhase} />
 
       <div
-        className={`min-h-screen bg-background text-foreground overflow-x-hidden transition-all duration-700 ${
-          splashPhase === 'show' ? 'opacity-0 blur-[2px]' : 'opacity-100 blur-0'
+        className={`min-h-screen bg-background text-foreground overflow-x-hidden transition-opacity duration-500 ${
+          splashPhase === 'show' ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       >
         <Header theme={theme} onToggleTheme={() => setTheme((t) => (t === 'dark' ? 'light' : 'dark'))} />
