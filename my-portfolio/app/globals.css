@@ -226,3 +226,14 @@
   }
   .scrollbar-hide::-webkit-scrollbar { display: none; }
 }
+
+/*
+ * Safari fix: backdrop-filter on position:fixed elements causes the
+ * compositor to drop content layers during scroll. Giving <main> its
+ * own GPU layer prevents the flicker. The -webkit- prefix covers older
+ * Safari versions; the unprefixed property covers standards-track.
+ */
+main {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
