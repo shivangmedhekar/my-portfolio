@@ -189,22 +189,13 @@
     50%       { opacity: 0; }
   }
 
-  /* Fade-up entrance */
-  .animate-fade-up {
-    opacity: 1;
-    will-change: transform;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    animation: fade-up 0.5s ease both;
+  /* Scroll-triggered fade — kept for any future use */
+  .animate-in-view {
+    animation: fade-up 0.45s ease both;
   }
   @keyframes fade-up {
     from { transform: translateY(14px); }
     to   { transform: translateY(0);    }
-  }
-
-  /* Scroll-triggered fade used with inline style delay */
-  .animate-in-view {
-    animation: fade-up 0.45s ease both;
   }
 
   /* Float */

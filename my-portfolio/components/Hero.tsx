@@ -285,7 +285,7 @@ export default function Hero() {
 
         {/* Status badge */}
         <div
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/60 backdrop-blur-sm animate-fade-up"
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/60 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
           style={{ animationDelay: '0.05s' }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
@@ -295,7 +295,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <div className="space-y-3 animate-fade-up" style={{ animationDelay: '0.15s' }}>
+        <div className="space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both" style={{ animationDelay: '0.15s' }}>
           {/* Beam sweep under name */}
           <div className="relative inline-block">
             <span
@@ -319,7 +319,7 @@ export default function Hero() {
 
         {/* Bio */}
         <p
-          className="text-lg text-foreground/80 leading-relaxed max-w-xl animate-fade-up"
+          className="text-lg text-foreground/80 leading-relaxed max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
           style={{ animationDelay: '0.25s' }}
         >
           {hero.bio}
@@ -327,7 +327,7 @@ export default function Hero() {
 
         {/* Stack pills */}
         <div
-          className="flex flex-wrap justify-center gap-1.5 animate-fade-up"
+          className="flex flex-wrap justify-center gap-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
           style={{ animationDelay: '0.32s' }}
         >
           {STACK.map(s => (
@@ -342,7 +342,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div
-          className="flex flex-wrap justify-center gap-3 animate-fade-up"
+          className="flex flex-wrap justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
           style={{ animationDelay: '0.38s' }}
         >
           <a
@@ -370,7 +370,7 @@ export default function Hero() {
 
       {/* Scroll hint */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-fade-up"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
         style={{ animationDelay: '0.6s' }}
       >
         <div className="w-px h-10 bg-gradient-to-b from-transparent via-border to-transparent" />

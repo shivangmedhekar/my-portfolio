@@ -117,7 +117,7 @@ export default function Projects() {
       <ProjectsBackdrop />
       <div className="relative max-w-3xl mx-auto">
         {/* Header */}
-        <div className="mb-10 space-y-1 animate-fade-up">
+        <div className="mb-10 space-y-1 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both">
           <p className="font-mono text-sm text-muted-foreground uppercase tracking-[0.15em]">
             {projects.sectionLabel}
           </p>
@@ -132,7 +132,7 @@ export default function Projects() {
               href={p.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex flex-col gap-3 p-5 bg-background hover:bg-card transition-colors duration-150 animate-fade-up min-h-[250px]"
+              className="group flex flex-col gap-3 p-5 bg-background hover:bg-card transition-colors duration-150 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both min-h-[250px]"
               style={{ animationDelay: `${0.08 + idx * 0.05}s` }}
             >
               {/* Title */}
