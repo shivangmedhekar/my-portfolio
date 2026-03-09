@@ -16,6 +16,7 @@ function EducationBackdrop() {
           backgroundImage:
             'linear-gradient(to right, color-mix(in oklch, var(--color-border) 76%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--color-border) 76%, transparent) 1px, transparent 1px)',
           backgroundSize: '44px 44px',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 14%, black 84%, transparent)',
           maskImage: 'linear-gradient(to bottom, transparent, black 14%, black 84%, transparent)',
         }}
       />
@@ -67,7 +68,7 @@ export default function Education() {
       />
 
       <div className="relative max-w-6xl mx-auto">
-        <div className="mb-12 space-y-2 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both">
+        <div className="mb-12 space-y-2">
           <p className="font-mono text-sm text-muted-foreground uppercase tracking-[0.15em]">{education.sectionLabel}</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">{education.title}</h2>
           <p className="text-lg text-foreground/80 max-w-2xl">
@@ -79,8 +80,7 @@ export default function Education() {
           {education.items.map((edu, idx) => (
             <div
               key={idx}
-              className="relative overflow-hidden rounded-2xl border border-border/70 bg-card/45 backdrop-blur-sm p-5 sm:p-6 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both group hover:border-accent/40 hover:bg-card/75 transition-all"
-              style={{ animationDelay: `${0.1 + idx * 0.08}s` }}
+              className="relative overflow-hidden rounded-2xl border border-border/70 bg-card/45 backdrop-blur-sm p-5 sm:p-6 group hover:border-accent/40 hover:bg-card/75 transition-colors duration-300"
             >
               <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-accent/50 via-accent to-accent/30 opacity-70" />
               <div className="flex-1 space-y-4">

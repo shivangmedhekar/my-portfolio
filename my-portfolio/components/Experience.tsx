@@ -30,6 +30,7 @@ function DevBackdrop() {
           backgroundImage:
             'linear-gradient(to right, color-mix(in oklch, var(--color-border) 78%, transparent) 1px, transparent 1px), linear-gradient(to bottom, color-mix(in oklch, var(--color-border) 78%, transparent) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 16%, black 82%, transparent)',
           maskImage: 'linear-gradient(to bottom, transparent, black 16%, black 82%, transparent)',
         }}
       />
@@ -185,8 +186,7 @@ function JobRow({ job, index, onClick }: { job: Job; index: number; onClick: () 
   return (
     <button
       onClick={onClick}
-      className="group relative w-full text-left animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-      style={{ animationDelay: `${0.1 + index * 0.08}s` }}
+      className="group relative w-full text-left"
     >
       <div className="absolute -inset-px rounded-2xl bg-gradient-to-r from-accent/0 via-accent/40 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-[1px]" />
       <div className="relative rounded-2xl border border-border/70 bg-card/40 backdrop-blur-sm p-5 sm:p-6 hover:bg-card/80 hover:border-accent/40 transition-all duration-300">
@@ -265,7 +265,7 @@ export default function Experience() {
       />
 
       <div className="relative max-w-4xl mx-auto">
-        <div className="mb-12 space-y-2 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both">
+        <div className="mb-12 space-y-2">
           <p className="font-mono text-sm text-muted-foreground uppercase tracking-[0.15em]">{experience.sectionLabel}</p>
           <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">{experience.title}</h2>
           <p className="text-base text-muted-foreground max-w-2xl">

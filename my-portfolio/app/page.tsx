@@ -21,15 +21,37 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+      if (!anchor) return;
+      const id = anchor.getAttribute('href')!.slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem('theme', theme);
     const root = document.documentElement;
-    root.classList.remove('dark', 'light');
-    root.classList.add(theme);
+    root.classList.toggle('dark', theme === 'dark');
+    root.classList.toggle('light', theme === 'light');
   }, [theme]);
 
   useEffect(() => {
     const tExit = setTimeout(() => setSplashPhase('exit'), 4600);
-    const tHide = setTimeout(() => setSplashPhase('hidden'), 5400);
+    const tHide = setTimeout(() => {
+      setSplashPhase('hidden');
+      // Force Safari to reflow the now-visible content so it doesn't
+      // lazily rasterise sections as the user scrolls to them.
+      requestAnimationFrame(() => {
+        void document.body.offsetHeight;
+      });
+    }, 5400);
     return () => {
       clearTimeout(tExit);
       clearTimeout(tHide);

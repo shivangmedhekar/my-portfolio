@@ -17,9 +17,7 @@ export default function Header({
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 h-14 flex items-center">
-      {/* Frosted backdrop */}
-      <div className="absolute inset-0 backdrop-blur-md bg-background/80 border-b border-border/60" />
+    <header className="fixed top-0 inset-x-0 z-50 h-14 flex items-center backdrop-blur-md bg-background/80 border-b border-border/60 [will-change:transform]">
 
       <div className="relative w-full max-w-5xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}

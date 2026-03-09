@@ -11,6 +11,7 @@ function CircuitCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const rafRef    = useRef<number>(0);
   const tickRef   = useRef<number>(0);
+  const visibleRef = useRef(true);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -182,7 +183,9 @@ function CircuitCanvas() {
         ctx.stroke();
       });
 
-      rafRef.current = requestAnimationFrame(draw);
+      if (visibleRef.current) {
+        rafRef.current = requestAnimationFrame(draw);
+      }
     };
 
     buildLayout();
@@ -191,9 +194,21 @@ function CircuitCanvas() {
     const ro = new ResizeObserver(() => { buildLayout(); });
     ro.observe(canvas);
 
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        visibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting && !rafRef.current) {
+          rafRef.current = requestAnimationFrame(draw);
+        }
+      },
+      { threshold: 0 }
+    );
+    io.observe(canvas);
+
     return () => {
       cancelAnimationFrame(rafRef.current);
       ro.disconnect();
+      io.disconnect();
     };
   }, []);
 
@@ -202,7 +217,13 @@ function CircuitCanvas() {
       ref={canvasRef}
       className="absolute inset-0 w-full h-full"
       aria-hidden="true"
-      style={{ opacity: 0.72 }}
+      style={{
+        opacity: 0.72,
+        WebkitBackfaceVisibility: 'hidden',
+        backfaceVisibility: 'hidden',
+        WebkitTransform: 'translateZ(0)',
+        transform: 'translateZ(0)',
+      }}
     />
   );
 }
@@ -273,10 +294,14 @@ export default function Hero() {
         className="absolute pointer-events-none"
         style={{
           top: '50%', left: '50%',
-          transform: 'translate(-50%, -62%)',
+          WebkitTransform: 'translate(-50%, -62%) translateZ(0)',
+          transform: 'translate(-50%, -62%) translateZ(0)',
           width: '720px', height: '220px',
           background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(99,102,241,0.22) 0%, rgba(99,102,241,0.06) 55%, transparent 100%)',
+          WebkitFilter: 'blur(32px)',
           filter: 'blur(32px)',
+          WebkitBackfaceVisibility: 'hidden',
+          backfaceVisibility: 'hidden',
         }}
       />
 
@@ -285,8 +310,7 @@ export default function Hero() {
 
         {/* Status badge */}
         <div
-          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/60 backdrop-blur-sm animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-          style={{ animationDelay: '0.05s' }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-card/60 backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
           <span className="font-mono text-sm text-muted-foreground tracking-wider uppercase">
@@ -295,7 +319,7 @@ export default function Hero() {
         </div>
 
         {/* Headline */}
-        <div className="space-y-3 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both" style={{ animationDelay: '0.15s' }}>
+        <div className="space-y-3">
           {/* Beam sweep under name */}
           <div className="relative inline-block">
             <span
@@ -304,7 +328,10 @@ export default function Hero() {
               style={{
                 top: '58%', height: '1px',
                 background: 'linear-gradient(90deg, transparent 0%, #818cf8 25%, #c7d2fe 50%, #818cf8 75%, transparent 100%)',
+                WebkitAnimation: 'beam-sweep 4s ease-in-out infinite',
                 animation: 'beam-sweep 4s ease-in-out infinite',
+                WebkitBackfaceVisibility: 'hidden',
+                backfaceVisibility: 'hidden',
               }}
             />
             <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] font-semibold tracking-tight leading-[1.05] text-foreground">
@@ -319,16 +346,14 @@ export default function Hero() {
 
         {/* Bio */}
         <p
-          className="text-lg text-foreground/80 leading-relaxed max-w-xl animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-          style={{ animationDelay: '0.25s' }}
+          className="text-lg text-foreground/80 leading-relaxed max-w-xl"
         >
           {hero.bio}
         </p>
 
         {/* Stack pills */}
         <div
-          className="flex flex-wrap justify-center gap-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-          style={{ animationDelay: '0.32s' }}
+          className="flex flex-wrap justify-center gap-1.5"
         >
           {STACK.map(s => (
             <span
@@ -342,8 +367,7 @@ export default function Hero() {
 
         {/* CTAs */}
         <div
-          className="flex flex-wrap justify-center gap-3 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-          style={{ animationDelay: '0.38s' }}
+          className="flex flex-wrap justify-center gap-3"
         >
           <a
             href={hero.ctas.work.href}
@@ -370,8 +394,7 @@ export default function Hero() {
 
       {/* Scroll hint */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-        style={{ animationDelay: '0.6s' }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5"
       >
         <div className="w-px h-10 bg-gradient-to-b from-transparent via-border to-transparent" />
         <span className="font-mono text-xs text-muted-foreground uppercase tracking-widest">{hero.scrollLabel}</span>

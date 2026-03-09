@@ -60,7 +60,7 @@ export default function Contact() {
   return (
     <section id="contact" className="relative py-24 px-6 border-t border-border/40 overflow-hidden">
       <ContactBackdrop />
-        <div className="relative max-w-3xl mx-auto space-y-12 animate-in fade-in slide-in-from-bottom-4 duration-500 fill-mode-both">
+        <div className="relative max-w-3xl mx-auto space-y-12">
 
         {/* Headline */}
         <div className="space-y-1">

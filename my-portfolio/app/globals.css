@@ -1,6 +1,17 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
+/* Safari animation fix — force GPU compositing on animated elements.
+   @supports targets WebKit/Safari only via -webkit-backdrop-filter. */
+@supports (-webkit-backdrop-filter: blur(1px)) {
+  *[class*="animate"],
+  *[class*="transition"] {
+    -webkit-backface-visibility: hidden !important;
+    backface-visibility: hidden !important;
+    will-change: transform, opacity !important;
+  }
+}
+
 @custom-variant dark (&:is(.dark *));
 @custom-variant light (&:is(.light *));
 
@@ -130,7 +141,6 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
   * { @apply border-border outline-ring/50; }
   body { @apply bg-background text-foreground; }
 }
@@ -144,6 +154,8 @@
       transparent 1px
     );
     background-size: 28px 28px;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
   }
 
   /* Indigo glow */
@@ -191,33 +203,58 @@
 
   /* Scroll-triggered fade — kept for any future use */
   .animate-in-view {
+    -webkit-animation: fade-up 0.45s ease both;
     animation: fade-up 0.45s ease both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  @-webkit-keyframes fade-up {
+    from { -webkit-transform: translateY(14px); transform: translateY(14px); }
+    to   { -webkit-transform: translateY(0);    transform: translateY(0);    }
   }
   @keyframes fade-up {
-    from { transform: translateY(14px); }
-    to   { transform: translateY(0);    }
+    from { -webkit-transform: translateY(14px); transform: translateY(14px); }
+    to   { -webkit-transform: translateY(0);    transform: translateY(0);    }
   }
 
   /* Float */
   .animate-float {
+    -webkit-animation: float 6s ease-in-out infinite;
     animation: float 6s ease-in-out infinite;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  @-webkit-keyframes float {
+    0%, 100% { -webkit-transform: translateY(0);    transform: translateY(0);    }
+    50%       { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
   }
   @keyframes float {
-    0%, 100% { transform: translateY(0);    }
-    50%       { transform: translateY(-8px); }
+    0%, 100% { -webkit-transform: translateY(0);    transform: translateY(0);    }
+    50%       { -webkit-transform: translateY(-8px); transform: translateY(-8px); }
   }
 
+  @-webkit-keyframes beam-sweep {
+    0%, 100% { opacity: 0.18; -webkit-transform: scaleX(0.6); transform: scaleX(0.6); }
+    50%       { opacity: 0.45; -webkit-transform: scaleX(1.0); transform: scaleX(1.0); }
+  }
   @keyframes beam-sweep {
-    0%, 100% { opacity: 0.18; transform: scaleX(0.6); }
-    50%       { opacity: 0.45; transform: scaleX(1.0); }
+    0%, 100% { opacity: 0.18; -webkit-transform: scaleX(0.6); transform: scaleX(0.6); }
+    50%       { opacity: 0.45; -webkit-transform: scaleX(1.0); transform: scaleX(1.0); }
   }
 
   .animate-modal-in {
+    -webkit-animation: modal-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
     animation: modal-in 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  @-webkit-keyframes modal-in {
+    from { opacity: 0; -webkit-transform: translateY(16px) scale(0.97); transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; -webkit-transform: translateY(0)    scale(1);    transform: translateY(0)    scale(1);    }
   }
   @keyframes modal-in {
-    from { opacity: 0; transform: translateY(16px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0)    scale(1);    }
+    from { opacity: 0; -webkit-transform: translateY(16px) scale(0.97); transform: translateY(16px) scale(0.97); }
+    to   { opacity: 1; -webkit-transform: translateY(0)    scale(1);    transform: translateY(0)    scale(1);    }
   }
 
   .scrollbar-hide {
@@ -228,12 +265,16 @@
 }
 
 /*
- * Safari fix: backdrop-filter on position:fixed elements causes the
- * compositor to drop content layers during scroll. Giving <main> its
- * own GPU layer prevents the flicker. The -webkit- prefix covers older
- * Safari versions; the unprefixed property covers standards-track.
+ * Safari compositing fix: promote <main> and each <section> to their own
+ * GPU layers so backdrop-filter on the fixed header doesn't corrupt content
+ * layers on scroll, and so Safari pre-rasterises off-screen sections.
+ *
+ * Using backface-visibility instead of transform/will-change:transform
+ * because those create containing blocks that break position:fixed children
+ * (e.g. the Experience modal overlay).
  */
-main {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
+main,
+section {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
