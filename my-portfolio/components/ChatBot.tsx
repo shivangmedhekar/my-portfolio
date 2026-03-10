@@ -115,12 +115,14 @@ export default function ChatBot({ isOpen, onToggle }: { isOpen: boolean; onToggl
 
       if (!response.ok) {
         let message = 'Failed to get response from chat API.';
-        try {
-          const data = (await response.json()) as { error?: string };
-          message = data.error ?? message;
-        } catch {
-          const textError = await response.text();
-          if (textError) message = textError;
+        const rawError = await response.text();
+        if (rawError) {
+          try {
+            const data = JSON.parse(rawError) as { error?: string };
+            message = data.error ?? rawError;
+          } catch {
+            message = rawError;
+          }
         }
         throw new Error(message);
       }
