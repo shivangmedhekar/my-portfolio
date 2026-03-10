@@ -77,8 +77,9 @@ export default function Home() {
           <Contact />
         </main>
 
-        <ChatBot isOpen={showChat} onToggle={() => setShowChat((s) => !s)} />
       </div>
+
+      <ChatBot isOpen={showChat} onToggle={() => setShowChat((s) => !s)} />
     </>
   );
 }

@@ -1,0 +1,20 @@
+# Minimal Requirements - Core Dependencies Only
+# Install: pip install -r requirements-minimal.txt
+# Then install your chosen provider separately
+
+# Core (Always Required)
+supabase==2.3.4
+python-dotenv==1.0.1
+numpy==1.26.4
+pypdf==5.4.0
+
+# After installing core, choose ONE provider:
+# 
+# For OpenAI (Paid, Best Quality):
+#   pip install openai
+#
+# For Sentence Transformers (Free, Offline):
+#   pip install sentence-transformers torch
+#
+# For Gemini (API-based):
+#   set GEMINI_API_KEY in .env (no extra package needed)

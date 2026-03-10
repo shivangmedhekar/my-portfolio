@@ -2,6 +2,8 @@
 
 import { useState, useRef, useEffect, type MouseEvent as ReactMouseEvent } from 'react';
 import { Send, X, MessageSquare, RotateCcw } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import siteData from '@/data.json';
 
 interface Message {
@@ -12,8 +14,6 @@ interface Message {
 
 const { chatBot } = siteData;
 const SUGGESTIONS = chatBot.suggestions;
-
-const RESPONSES = chatBot.responses;
 
 const INITIAL_MESSAGE: Message = {
   id: '0',
@@ -89,18 +89,81 @@ export default function ChatBot({ isOpen, onToggle }: { isOpen: boolean; onToggl
     setResizing(true);
   };
 
-  const send = (text: string) => {
+  const send = async (text: string) => {
     if (!text.trim() || loading) return;
-    const userMsg: Message = { id: Date.now().toString(), role: 'user', text };
-    setMessages((p) => [...p, userMsg]);
+    const trimmedText = text.trim();
+    const userMsg: Message = { id: Date.now().toString(), role: 'user', text: trimmedText };
+    const assistantId = (Date.now() + 1).toString();
+    const nextMessages = [...messages, userMsg];
+    setMessages([...nextMessages, { id: assistantId, role: 'assistant', text: '' }]);
     setInput('');
     setLoading(true);
 
-    setTimeout(() => {
-      const reply = RESPONSES[Math.floor(Math.random() * RESPONSES.length)];
-      setMessages((p) => [...p, { id: (Date.now() + 1).toString(), role: 'assistant', text: reply }]);
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          messages: nextMessages.map((message) => ({
+            role: message.role,
+            content: message.text,
+          })),
+        }),
+      });
+
+      if (!response.ok) {
+        let message = 'Failed to get response from chat API.';
+        try {
+          const data = (await response.json()) as { error?: string };
+          message = data.error ?? message;
+        } catch {
+          const textError = await response.text();
+          if (textError) message = textError;
+        }
+        throw new Error(message);
+      }
+
+      if (!response.body) {
+        throw new Error('Streaming response body is missing.');
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        if (!chunk) continue;
+
+        setMessages((prev) =>
+          prev.map((m) => (m.id === assistantId ? { ...m, text: m.text + chunk } : m))
+        );
+      }
+
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId && !m.text.trim()
+            ? { ...m, text: 'I could not generate a response right now.' }
+            : m
+        )
+      );
+    } catch (error) {
+      const fallbackMessage =
+        error instanceof Error ? error.message : 'Something went wrong while contacting the assistant.';
+
+      setMessages((prev) =>
+        prev.map((m) =>
+          m.id === assistantId
+            ? { ...m, text: `Error: ${fallbackMessage}` }
+            : m
+        )
+      );
+    } finally {
       setLoading(false);
-    }, 900);
+    }
   };
 
   return (
@@ -169,7 +232,15 @@ export default function ChatBot({ isOpen, onToggle }: { isOpen: boolean; onToggl
                     : 'bg-card border border-border text-foreground'
                 }`}
               >
-                {msg.text}
+                {msg.role === 'assistant' ? (
+                  <div className="space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ol]:list-decimal [&_ol]:pl-5 [&_code]:rounded [&_code]:bg-muted/50 [&_code]:px-1 [&_code]:py-0.5 [&_pre]:overflow-x-auto [&_pre]:rounded-md [&_pre]:bg-muted/50 [&_pre]:p-2 [&_a]:underline [&_a]:underline-offset-2">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml>
+                      {msg.text}
+                    </ReactMarkdown>
+                  </div>
+                ) : (
+                  msg.text
+                )}
               </div>
             </div>
           ))}
